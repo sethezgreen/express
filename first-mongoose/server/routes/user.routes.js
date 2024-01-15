@@ -1,5 +1,6 @@
-const UserController = require('../controllers/user.controller');
+const UserController = require('../controllers/user.controller'); // imports the controller
 
+// defines each route
 module.exports = app => {
     app.get('/api/users', UserController.findAllUsers);
     app.get('/api/users/:id', UserController.findOneSingleUser);

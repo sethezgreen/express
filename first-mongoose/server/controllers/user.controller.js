@@ -1,5 +1,6 @@
-const User = require('../models/user.model');
+const User = require('../models/user.model'); // imports the model
 
+// CRUD logic for the routes to call on
 module.exports.findAllUsers = (req, res) => {
     User.find()
         .then((allDaUsers) => {
