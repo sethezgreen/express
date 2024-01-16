@@ -35,6 +35,18 @@ module.exports = { // exports all functions
     },
 
     // Update Joke
+    updateJoke: (req, res) => {
+        Joke.findOneAndUpdate(
+            {_id: req.params.id}, // find one 
+            req.body, // info from the request
+            {new: true, runValidators: true}) // new: true ensures the updatedJoke gets sent
+            .then((updatedJoke) => {
+                res.json(updatedJoke)
+            })
+            .catch((err) => {
+                res.status(500).json(err)
+            })
+    },
 
     // Delete Joke
     deleteJoke: (req, res) => {
