@@ -2,8 +2,14 @@
 const mongoose = require('mongoose') // imports mongoose library
 
 const JokeSchema = new mongoose.Schema({
-    setup:String,
-    punchline:String
+    setup:{
+        type:String,
+        required:[true, "setup is required"]
+    },
+    punchline:{
+        type:String,
+        required:[true, "punchline is required"]
+    }
 
     // for created at and updated at
 }, {timestamps:true})
